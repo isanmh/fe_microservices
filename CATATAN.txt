@@ -1,0 +1,11 @@
+cara install react js :
+npx create-react-app nama_app
+
+depedencies yang digunakan :
+npm install react-router-dom -> melakukan navigasi antar halaman
+
+npm i react-router-dom react-bootstrap bootstrap sweetalert2 axios
+
+cara biki component :
+rafce / rfce : membuat component dengan arrow function dan export default
+rce : membuat component dengan class dan export default

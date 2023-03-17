@@ -1,3 +1,16 @@
+- npm install
+- jika error : npm install --force
+    npm install react-reveal --force
+- npm start
+
+setting docker : docker-compose up -d --build
+
+cara install react js di Container :
+docker-compose exec app npx create-react-app nama_app
+
+cara jalankan react js di Container :
+docker-compose exec app npm start
+
 cara install react js :
 npx create-react-app nama_app
 
@@ -9,3 +22,6 @@ npm i react-router-dom react-bootstrap bootstrap sweetalert2 axios
 cara biki component :
 rafce / rfce : membuat component dengan arrow function dan export default
 rce : membuat component dengan class dan export default
+
+untuk animasi react reveal :
+npm install react-reveal --force

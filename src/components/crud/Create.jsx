@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Col, Container, Figure } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { Api } from "../../config/Api";
+import { Api, Url } from "../../config/Api";
 
 const Create = () => {
   const [name, setName] = useState("");
@@ -11,6 +11,7 @@ const Create = () => {
   const [phone, setPhone] = useState("");
   const [image, setImage] = useState("");
   const [preview, setPreview] = useState();
+  const [previewName, setPreviewName] = useState("");
   const [errors, setErrors] = useState([]);
   // react router dom navigation
   const navigate = useNavigate();
@@ -144,9 +145,21 @@ const Create = () => {
                 width="100%"
                 style={{ height: 300 }}
               />
+              <Figure.Caption className="text-center">
+                {image.name}
+              </Figure.Caption>
             </Figure>
           ) : (
-            ""
+            <Figure>
+              <Figure.Image
+                src={`${Url}/default_img.svg`}
+                width="100%"
+                style={{ height: 300 }}
+              />
+              <Figure.Caption className="text-center">
+                No Image - Please Insert Image
+              </Figure.Caption>
+            </Figure>
           )}
         </Col>
       </div>

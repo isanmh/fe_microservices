@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="primary" expand="lg" variant="dark">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          FE-MiCRO
+          <strong>FE-MICROSERVICE</strong>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

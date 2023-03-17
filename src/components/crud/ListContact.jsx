@@ -4,6 +4,7 @@ import { Button, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import { Api, Url } from "../../config/Api";
+import { Fade } from "react-reveal";
 
 const ListContact = () => {
   // untuk menampung data contact
@@ -46,50 +47,52 @@ const ListContact = () => {
 
   return (
     <Container>
-      <div className="d-flex justify-content-between align-items-center">
-        <h1 className="text-primary">List Contact</h1>
-        <Link className="btn btn-primary my-3" to={"/create"}>
+      <div className="d-flex justify-content-between align-items-center mt-2">
+        <h3 className="text-primary">List Contact</h3>
+        <Link className="btn btn-primary" to={"/create"}>
           Add Contact
         </Link>
       </div>
       <hr />
       <Row>
         {contacts.map((item) => (
-          <div className="col-md-4" key={item.id}>
-            <div className="card mb-4 shadow">
-              <div className="card-body">
-                <div className="card-img-top">
-                  <img
-                    src={`${Url}/${item.image}`}
-                    alt={item.image}
-                    style={{ height: 200 }}
-                    width="100%"
-                  />
-                </div>
-                <h5 className="card-title">{item.name}</h5>
-                <small className="card-text">{item.email}</small>
-                <p className="card-text">{item.phone}</p>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div className="btn-group">
-                    <Link
-                      to={`/edit/${item.id}`}
-                      className="btn btn-sm btn-outline-secondary"
-                    >
-                      Edit
-                    </Link>
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={() => deleteContact(item.id)}
-                    >
-                      Delete
-                    </Button>
+          <Fade key={item.id} bottom>
+            <div className="col-md-4">
+              <div className="card mb-4 shadow">
+                <div className="card-body">
+                  <div className="card-img-top">
+                    <img
+                      src={`${Url}/${item.image}`}
+                      alt={item.image}
+                      style={{ height: 200 }}
+                      width="100%"
+                    />
                   </div>
-                  <small className="text-muted">{item.id}</small>
+                  <h5 className="card-title">{item.name}</h5>
+                  <small className="card-text">{item.email}</small>
+                  <p className="card-text">{item.phone}</p>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div className="btn-group">
+                      <Link
+                        to={`/edit/${item.id}`}
+                        className="btn btn-sm btn-outline-secondary"
+                      >
+                        Edit
+                      </Link>
+                      <Button
+                        variant="danger"
+                        size="sm"
+                        onClick={() => deleteContact(item.id)}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                    <small className="text-muted">{item.id}</small>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Fade>
         ))}
       </Row>
     </Container>

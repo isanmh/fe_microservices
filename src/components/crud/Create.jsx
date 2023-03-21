@@ -152,7 +152,7 @@ const Create = () => {
           ) : (
             <Figure>
               <Figure.Image
-                src={`${Url}/default_img.svg`}
+                src="assets/images/default_img.svg"
                 width="100%"
                 style={{ height: 300 }}
               />

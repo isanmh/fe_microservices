@@ -26,7 +26,7 @@ const Edit = () => {
     setName(res.data.data.name);
     setEmail(res.data.data.email);
     setPhone(res.data.data.phone);
-    // setImage(res.data.data.image);
+    setImage(res.data.data.image);
     setPreview(`${Url}/${res.data.data.image}`);
   };
 
@@ -155,6 +155,7 @@ const Edit = () => {
                 width="100%"
                 style={{ height: 300 }}
               />
+              <Figure.Caption className="text-center">{preview}</Figure.Caption>
             </Figure>
           ) : (
             ""
